@@ -1,0 +1,50 @@
+@import 'src/scss/variables';
+
+$max-width-xs: 420px;
+$max-width-sm: 526px;
+$max-width-md: 720px;
+$max-width-lg: 960px;
+$max-width-xl: 1140px;
+$max-width-2xl: 1320px;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacer-8;
+  padding-right: $spacer-8;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-xs) {
+    max-width: $max-width-xs;
+  }
+
+  @media screen and (min-width: $breakpoint-sm) {
+    max-width: $max-width-sm;
+    padding-left: $spacer-10;
+    padding-right: $spacer-10;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: $max-width-md;
+    padding-left: $spacer-16;
+    padding-right: $spacer-16;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    max-width: $max-width-lg;
+    padding-left: $spacer-30;
+    padding-right: $spacer-30;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    max-width: $max-width-xl;
+    padding-left: $spacer-48;
+    padding-right: $spacer-48;
+  }
+
+  @media screen and (min-width: $breakpoint-2xl) {
+    max-width: $max-width-2xl;
+    padding-left: $spacer-76;
+    padding-right: $spacer-76;
+  }
+}

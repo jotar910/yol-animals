@@ -1,0 +1,19 @@
+$color-primary: #0cc;
+$color-black: #000;
+
+@function toRGB($color) {
+  @return red($color) + ', ' + green($color) + ', ' + blue($color);
+}
+
+:root {
+  // Colors
+  --color-black: #{$color-black};
+  --color-black-rgb: #{toRGB($color-black)};
+  --color-white: #fff;
+
+  // Brand colors
+  --color-primary: #{$color-primary};
+  --color-primary-rgb: #{toRGB($color-primary)};
+  --color-dark-text: #081f32;
+  --color-light-text: #6e798c;
+}

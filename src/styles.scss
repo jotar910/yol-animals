@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/scss/main';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 16px;
+  margin: 0;
+}

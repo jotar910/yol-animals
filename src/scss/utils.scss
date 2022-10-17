@@ -1,0 +1,11 @@
+@import 'variables';
+
+.w-full {
+  width: 100%;
+}
+
+.w-md-auto {
+  @media screen and (min-width: $breakpoint-md) {
+    width: auto;
+  }
+}
