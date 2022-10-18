@@ -1,0 +1,29 @@
+@mixin maxLinesEllipsis($lines) {
+  -webkit-line-clamp: #{$lines};
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+@mixin loading-animation($color: var(--color-gray), $light-color: var(--color-lighter-gray), $dark-color: var(--color-light-gray)) {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholder-shimmer;
+  animation-timing-function: linear;
+  background: $color;
+  background: linear-gradient(to right, #{$light-color} 10%, #{$dark-color} 18%, #{$light-color} 33%);
+  background-size: 200% 100%;
+  position: relative;
+}
+
+@keyframes placeholder-shimmer {
+  0%{
+    background-position: 100% 0;
+  }
+  100%{
+    background-position: -100% 0;
+  }
+}

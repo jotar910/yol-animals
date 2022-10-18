@@ -1,0 +1,32 @@
+:host {
+  --outer-size: 80px;
+  --inner-size: calc(var(--outer-size) * 0.8);
+  --margin: calc(var(--outer-size) * 0.1);
+  --border: calc(var(--margin) * 0.8);
+  --color: #fff;
+
+  display: inline-block;
+  width: var(--outer-size);
+  height: var(--outer-size);
+
+  &::after {
+    content: '';
+    display: block;
+    width: var(--inner-size);
+    height: var(--inner-size);
+    margin: var(--margin);
+    border-radius: 50%;
+    border: var(--border) solid var(--color);
+    border-color: var(--color) transparent var(--color) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

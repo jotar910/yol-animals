@@ -1,1 +1,63 @@
-<p>animal-list works!</p>
+<section
+    *ngIf="{
+      loading: loading$ | async,
+      error: error$ | async,
+      animals: animals$ | async
+    } as data"
+    class="container"
+>
+
+  <ng-container *ngIf="data.error; else noErrorContainer" [ngTemplateOutlet]="errorContainer"></ng-container>
+
+  <ng-template #noErrorContainer>
+    <ng-container *ngIf="data.animals?.items?.length; else noAnimalsContainer" [ngTemplateOutlet]="animalsContainer"></ng-container>
+  </ng-template>
+
+  <ng-template #animalsContainer>
+    <div class="animal-list__table" [ngClass]="{'animal-list__table--disabled': data.loading}">
+      <app-animal-item *ngFor="let animal of data.animals?.items" [animal]="animal"></app-animal-item>
+    </div>
+    <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
+  </ng-template>
+
+  <ng-template #noAnimalsContainer>
+    <ng-container *ngIf="data.loading; else emptyContainer" [ngTemplateOutlet]="loadingContainer"></ng-container>
+  </ng-template>
+
+  <ng-template #emptyContainer>
+    <section class="animal-list__message">
+      <span class="animal-list__message__title">No animals available</span>
+      <p class="animal-list__message__description">Sorry, we couldn't find any animal available at the moment.</p>
+      <div class="animal-list__message__action">
+        <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
+      </div>
+    </section>
+  </ng-template>
+
+  <ng-template #errorContainer>
+    <section class="animal-list__message">
+      <span class="animal-list__message__title">Ops! Something went wrong</span>
+      <p class="animal-list__message__description">Sorry, we couldn't fetch the animals list! Please try again later.</p>
+      <div class="animal-list__message__action">
+        <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
+      </div>
+    </section>
+  </ng-template>
+
+  <ng-template #loadingContainer>
+    <div class="animal-list__table" [ngClass]="{'animal-list__table--disabled': data.loading}">
+      <app-animal-item-loading *ngFor="let animal of [].constructor(5)"></app-animal-item-loading>
+    </div>
+    <button class="btn btn--loading animal-list__action" disabled></button>
+  </ng-template>
+
+  <ng-template #actionContainer>
+    <button class="btn btn--primary animal-list__action"
+        [disabled]="data.loading"
+        (click)="fetchAnimals()">
+      <app-spinner *ngIf="data.loading"></app-spinner>
+      <span>Update</span>
+    </button>
+  </ng-template>
+
+</section>

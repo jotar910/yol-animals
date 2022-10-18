@@ -9,6 +9,9 @@ $color-black: #000;
   // Colors
   --color-black: #{$color-black};
   --color-black-rgb: #{toRGB($color-black)};
+  --color-lighter-gray: #eee;
+  --color-light-gray: #ddd;
+  --color-gray: #a9a9a9;
   --color-white: #fff;
 
   // Brand colors

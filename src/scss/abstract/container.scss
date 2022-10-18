@@ -47,4 +47,9 @@ $max-width-2xl: 1320px;
     padding-left: $spacer-76;
     padding-right: $spacer-76;
   }
+
+  @media screen and (min-width: $breakpoint-3xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

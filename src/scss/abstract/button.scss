@@ -1,19 +1,42 @@
+@import 'src/scss/mixins';
 @import 'src/scss/variables';
 
 .btn {
   border: none;
   border-radius: 100px;
-  font-size: $font-family-button;
+  font-family: $font-family-button;
+  font-size: 16px;
   font-weight: $font-weight-bold;
+  height: 40px;
   padding: $spacer-10 $spacer-48 $spacer-8;
 
-  &.btn--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 18px;
+    height: 48px;
   }
 
-  &:hover {
-    cursor: pointer;
-    opacity: $opacity-hover;
+  &.disabled, &:disabled {
+    cursor: not-allowed;
+    opacity: $opacity-disabled;
+  }
+
+  &:not(.disabled, :disabled) {
+    &:hover {
+      cursor: pointer;
+      opacity: $opacity-hover;
+    }
+  }
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--loading {
+  @include loading-animation();
+
+  &.disabled, &:disabled {
+    cursor: auto;
   }
 }

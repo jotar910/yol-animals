@@ -1,1 +1,75 @@
-// Empty by design.
+@import 'src/scss/variables';
+
+$animal-item-width: minmax(0, 360px);
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-list__table {
+  display: grid;
+  gap: $spacer-30;
+  grid-template-columns: $animal-item-width;
+  justify-content: space-between;
+  margin-bottom: $spacer-30;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, $animal-item-width);
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    gap: $spacer-48;
+    margin-bottom: $spacer-48;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    gap: $spacer-76;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    grid-template-columns: repeat(3, $animal-item-width);
+  }
+
+  &.animal-list__table--disabled {
+    opacity: $opacity-disabled;
+    pointer-events: none;
+  }
+}
+
+.animal-list__message {
+  padding: $spacer-30 $spacer-20;
+  text-align: center;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: $spacer-76;
+  }
+}
+
+.animal-list__message__title {
+  color: var(--color-dark-text);
+  font-size: 24px;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 36px;
+  }
+}
+
+.animal-list__message__description {
+  color: var(--color-light-text);
+  margin-bottom: $spacer-30;
+}
+
+.animal-list__action {
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+
+  app-spinner {
+    --outer-size: 24px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}

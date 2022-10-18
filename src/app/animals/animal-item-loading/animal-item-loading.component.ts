@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['app.component.scss'],
+  selector: 'app-animal-item-loading',
+  templateUrl: './animal-item-loading.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AnimalItemLoadingComponent {
 }

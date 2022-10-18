@@ -1,0 +1,9 @@
+<a [routerLink]="[animal.id]">
+  <article class="card card--radius card--elevated card--clickable">
+    <img class="card__image" [src]="animal.avatar" [alt]="animal.type" loading="lazy" />
+    <div class="card__content">
+      <span class="card__title">{{animal.name}}</span>
+      <span class="card__description">{{animal.type}}</span>
+    </div>
+  </article>
+</a>
