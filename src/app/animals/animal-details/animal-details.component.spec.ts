@@ -9,7 +9,7 @@ import { map, of, throwError, timer } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
 import { ActivatedRoute, Router } from '@angular/router';
-import { parseParamRoute } from '@app/animals/shared/utils/route.utils';
+import { parseParamRoute } from '@app/shared/utils/route.utils';
 import { RouteEnums } from '@app/shared/enums/route.enums';
 import { ActivatedRouteMock } from '@app/shared/tests/utils/activated-route-mock-util';
 

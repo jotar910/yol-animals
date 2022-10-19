@@ -52,7 +52,7 @@ describe('AnimalListComponent', () => {
     expect(fetchListSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should display 5 animal item placeholders while waiting for the initial response to fetch the list', fakeAsync(() => {
+  it('should display 5 animal card placeholders while waiting for the initial response to fetch the list', fakeAsync(() => {
     fetchListSpy.and.callFake(() => timer(200).pipe(map(() => animalListMock())));
 
     fixture.detectChanges();

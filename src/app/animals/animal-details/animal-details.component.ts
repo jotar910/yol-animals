@@ -5,7 +5,7 @@ import { AnimalsDataService } from '@app/animals/shared/services/animals-data.se
 import { RequestStateUtil } from '@app/shared/utils/request-state.util';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { RouteEnums } from '@app/shared/enums/route.enums';
-import { parseParamRoute } from '@app/animals/shared/utils/route.utils';
+import { parseParamRoute } from '@app/shared/utils/route.utils';
 
 @Component({
   selector: 'app-animal-details',
