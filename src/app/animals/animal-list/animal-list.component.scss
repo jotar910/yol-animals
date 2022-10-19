@@ -1,6 +1,6 @@
 @import 'src/scss/variables';
 
-$animal-item-width: minmax(0, 360px);
+$animal-card-width: minmax(0, 360px);
 
 .container {
   align-items: center;
@@ -11,12 +11,12 @@ $animal-item-width: minmax(0, 360px);
 .animal-list__table {
   display: grid;
   gap: $spacer-30;
-  grid-template-columns: $animal-item-width;
+  grid-template-columns: $animal-card-width;
   justify-content: space-between;
   margin-bottom: $spacer-30;
 
   @media screen and (min-width: $breakpoint-sm) {
-    grid-template-columns: repeat(2, $animal-item-width);
+    grid-template-columns: repeat(2, $animal-card-width);
   }
 
   @media screen and (min-width: $breakpoint-md) {
@@ -29,7 +29,7 @@ $animal-item-width: minmax(0, 360px);
   }
 
   @media screen and (min-width: $breakpoint-xl) {
-    grid-template-columns: repeat(3, $animal-item-width);
+    grid-template-columns: repeat(3, $animal-card-width);
   }
 
   &.animal-list__table--disabled {
