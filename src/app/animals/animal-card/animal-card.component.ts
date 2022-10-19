@@ -11,4 +11,8 @@ export class AnimalCardComponent {
 
   @Input() animal!: IAnimal;
 
+  @Input() clickable = false;
+
+  @Input() large = false;
+
 }

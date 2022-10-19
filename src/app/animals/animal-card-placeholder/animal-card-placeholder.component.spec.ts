@@ -8,16 +8,25 @@ describe('AnimalCardPlaceholderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnimalCardPlaceholderComponent ]
+      declarations: [AnimalCardPlaceholderComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AnimalCardPlaceholderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
+  });
+
+  it('should have large size placeholder', () => {
+    component.large = true;
+    fixture.detectChanges();
+
+    const cardEl: HTMLElement = fixture.nativeElement.querySelector('.card');
+    expect(cardEl).toBeTruthy();
+    expect(cardEl.classList.contains('card--lg'));
   });
 });

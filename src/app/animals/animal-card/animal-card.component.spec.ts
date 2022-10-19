@@ -35,10 +35,24 @@ describe('AnimalCardComponent', () => {
   });
 
   it('should have a link for the of the animal details', waitForAsync(async () => {
+    component.clickable = true;
     fixture.detectChanges();
 
     const linkEl: HTMLLinkElement = fixture.nativeElement.querySelector('a');
+    expect(linkEl).toBeTruthy();
     expect(linkEl.href.endsWith(`/${animalListItemMock().id}`)).toBeTrue();
-    expect(linkEl.querySelector('.card')).toBeTruthy();
+
+    const cardEl = linkEl.querySelector('.card') as HTMLElement;
+    expect(cardEl).toBeTruthy();
+    expect(cardEl.classList.contains('card--clickable'));
   }));
+
+  it('should have large size', () => {
+    component.large = true;
+    fixture.detectChanges();
+
+    const cardEl: HTMLElement = fixture.nativeElement.querySelector('.card');
+    expect(cardEl).toBeTruthy();
+    expect(cardEl.classList.contains('card--lg'));
+  });
 });
