@@ -25,20 +25,20 @@
   </ng-template>
 
   <ng-template #emptyContainer>
-    <section class="animal-list__message">
-      <span class="animal-list__message__title">No animals available</span>
-      <p class="animal-list__message__description">Sorry, we couldn't find any animal available at the moment.</p>
-      <div class="animal-list__message__action">
+    <section class="message-box">
+      <span class="message-box__title">No animals available</span>
+      <p class="message-box__description">Sorry, we couldn't find any animal available at the moment.</p>
+      <div class="message-box__action">
         <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
       </div>
     </section>
   </ng-template>
 
   <ng-template #errorContainer>
-    <section class="animal-list__message">
-      <span class="animal-list__message__title">Ops! Something went wrong</span>
-      <p class="animal-list__message__description">Sorry, we couldn't fetch the animals list! Please try again later.</p>
-      <div class="animal-list__message__action">
+    <section class="message-box">
+      <span class="message-box__title">Ops! Something went wrong</span>
+      <p class="message-box__description">Sorry, we couldn't fetch the animals list! Please try again later.</p>
+      <div class="message-box__action">
         <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
       </div>
     </section>

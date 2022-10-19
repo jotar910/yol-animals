@@ -1,5 +1,3 @@
-@import 'src/scss/mixins';
-
 :host {
   display: inline-block;
   width: 100%;
@@ -7,8 +5,4 @@
 
 a {
   text-decoration: none;
-}
-
-.card__description {
-  @include maxLinesEllipsis(2);
 }

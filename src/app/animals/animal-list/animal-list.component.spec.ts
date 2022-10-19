@@ -56,7 +56,7 @@ describe('AnimalListComponent', () => {
     fetchListSpy.and.callFake(() => timer(200).pipe(map(() => animalListMock())));
 
     fixture.detectChanges();
-    const tableEl: HTMLElement = fixture.nativeElement.querySelector('.animal-list__table--disabled');
+    const tableEl: HTMLElement = fixture.nativeElement.querySelector('.animal-list__table');
     expect(tableEl).toBeTruthy();
     expect(tableEl.children.length).toBe(5);
 
@@ -85,7 +85,7 @@ describe('AnimalListComponent', () => {
     fetchListSpy.and.returnValue(of({ items: [] }));
     fixture.detectChanges();
 
-    const messageEl: HTMLElement = fixture.nativeElement.querySelector('.animal-list__message__title');
+    const messageEl: HTMLElement = fixture.nativeElement.querySelector('.message-box__title');
     expect(messageEl).toBeTruthy();
     expect(messageEl.textContent).toBe('No animals available');
   });
@@ -94,7 +94,7 @@ describe('AnimalListComponent', () => {
     fetchListSpy.and.returnValue(throwError(() => 'error'));
     fixture.detectChanges();
 
-    const messageEl: HTMLElement = fixture.nativeElement.querySelector('.animal-list__message__title');
+    const messageEl: HTMLElement = fixture.nativeElement.querySelector('.message-box__title');
     expect(messageEl).toBeTruthy();
     expect(messageEl.textContent).toBe('Ops! Something went wrong');
   });
@@ -136,7 +136,7 @@ describe('AnimalListComponent', () => {
     expect(fetchListSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('fetch the animal list again when clicking on update button on the error container', () => {
+  it('should fetch the animal list again when clicking on update button on the error container', () => {
     fetchListSpy.and.returnValue(throwError(() => 'error'));
     fixture.detectChanges();
 

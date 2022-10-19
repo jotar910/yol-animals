@@ -1,0 +1,32 @@
+@import 'src/scss/variables';
+
+.message-box {
+  padding: $spacer-30 $spacer-20;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: $spacer-76;
+  }
+}
+
+.message-box__title {
+  color: var(--color-dark-text);
+  font-size: 24px;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 36px;
+  }
+}
+
+.message-box__description {
+  color: var(--color-light-text);
+  margin-bottom: $spacer-30;
+}
+
+.message-box__action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacer-20;
+}

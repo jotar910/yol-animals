@@ -1,1 +1,37 @@
-<p>animal-details works!</p>
+<section
+    *ngIf="{
+      loading: loading$ | async,
+      error: error$ | async,
+      animal: animal$ | async
+    } as data"
+    class="container animal-details__container"
+>
+
+  <ng-container *ngIf="data.error; else noErrorContainer" [ngTemplateOutlet]="errorContainer"></ng-container>
+
+  <ng-template #noErrorContainer>
+    <ng-container *ngIf="data.animal; else noAnimalContainer" [ngTemplateOutlet]="animalContainer"></ng-container>
+  </ng-template>
+
+  <ng-template #animalContainer>
+    <app-animal-card [animal]="data.animal!" [large]="true"
+        class="animal-details__card" [ngClass]="{'animal-details__card--disabled': data.loading}">
+    </app-animal-card>
+  </ng-template>
+
+  <ng-template #noAnimalContainer>
+    <app-animal-card-placeholder [large]="true" class="animal-details__card animal-details__card--disabled"></app-animal-card-placeholder>
+  </ng-template>
+
+  <ng-template #errorContainer>
+    <section class="message-box">
+      <span class="message-box__title">Ops! Something went wrong</span>
+      <p class="message-box__description">Sorry, we couldn't fetch the animal details!</p>
+      <div class="message-box__action">
+        <button class="btn btn--primary animal-details__action" (click)="fetchAnimal()">Retry</button>
+        <button class="btn btn--outline-primary animal-details__action" (click)="goBack()">Back</button>
+      </div>
+    </section>
+  </ng-template>
+
+</section>

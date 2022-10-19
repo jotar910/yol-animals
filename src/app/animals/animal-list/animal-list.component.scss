@@ -38,29 +38,6 @@ $animal-card-width: minmax(0, 360px);
   }
 }
 
-.animal-list__message {
-  padding: $spacer-30 $spacer-20;
-  text-align: center;
-
-  @media screen and (min-width: $breakpoint-md) {
-    padding: $spacer-76;
-  }
-}
-
-.animal-list__message__title {
-  color: var(--color-dark-text);
-  font-size: 24px;
-
-  @media screen and (min-width: $breakpoint-md) {
-    padding: 36px;
-  }
-}
-
-.animal-list__message__description {
-  color: var(--color-light-text);
-  margin-bottom: $spacer-30;
-}
-
 .animal-list__action {
   width: 100%;
   max-width: 260px;

@@ -1,1 +1,26 @@
-// Empty by design.
+@import 'src/scss/variables';
+
+.animal-details__container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  max-height: min(910px, calc((75vh + 50vw) * 0.5));
+}
+
+.animal-details__card {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.animal-details__card--disabled {
+  opacity: $opacity-disabled;
+  pointer-events: none;
+}
+
+.animal-details__action {
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    max-width: 200px;
+  }
+}
