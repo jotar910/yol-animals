@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { RequestStateUtil } from '@app/shared/utils/request-state.util';
 import { AnimalsDataService } from '@app/animals/shared/services/animals-data.service';
@@ -10,7 +10,7 @@ import { IAnimalList } from '@app/animals/shared/models/animal-list.interface';
   styleUrls: ['./animal-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AnimalListComponent {
+export class AnimalListComponent implements OnInit {
 
   animals$!: Observable<IAnimalList | null>;
 
@@ -21,6 +21,9 @@ export class AnimalListComponent {
   private readonly fetch$ = new ReplaySubject<() => Observable<IAnimalList>>(1);
 
   constructor(private readonly animalsDataService: AnimalsDataService) {
+  }
+
+  ngOnInit(): void {
     this.initSubscriptions();
     this.fetchAnimals();
   }
