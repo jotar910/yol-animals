@@ -46,7 +46,7 @@
 
   <ng-template #loadingContainer>
     <div class="animal-list__table" [ngClass]="{'animal-list__table--disabled': data.loading}">
-      <app-animal-item-loading *ngFor="let animal of [].constructor(5)"></app-animal-item-loading>
+      <app-animal-card-placeholder *ngFor="let animal of [].constructor(5)"></app-animal-card-placeholder>
     </div>
     <button class="btn btn--loading animal-list__action" disabled></button>
   </ng-template>

@@ -7,7 +7,7 @@ import { animalListItemsMock, animalListMock } from '@app/animals/shared/tests/m
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
 import { AnimalCardComponent } from '@app/animals/animal-card/animal-card.component';
-import { AnimalItemLoadingComponent } from '@app/animals/animal-item-loading/animal-item-loading.component';
+import { AnimalCardPlaceholderComponent } from '@app/animals/animal-card-placeholder/animal-card-placeholder.component';
 
 describe('AnimalListComponent', () => {
   let component: AnimalListComponent;
@@ -19,7 +19,7 @@ describe('AnimalListComponent', () => {
       declarations: [
         AnimalCardComponent,
         AnimalListComponent,
-        AnimalItemLoadingComponent
+        AnimalCardPlaceholderComponent
       ],
       imports: [
         RouterTestingModule,
@@ -61,7 +61,7 @@ describe('AnimalListComponent', () => {
     expect(tableEl.children.length).toBe(5);
 
     for (const childEl of Array.from(tableEl.children)) {
-      expect(childEl.tagName.toLowerCase()).toBe('app-animal-item-loading');
+      expect(childEl.tagName.toLowerCase()).toBe('app-animal-card-placeholder');
     }
 
     tick(200);

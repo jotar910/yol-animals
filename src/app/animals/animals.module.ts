@@ -5,16 +5,16 @@ import { AnimalsRoutingModule } from './animals-routing.module';
 import { AnimalDetailsComponent } from './animal-details/animal-details.component';
 import { AnimalListComponent } from './animal-list/animal-list.component';
 import { AnimalCardComponent } from './animal-card/animal-card.component';
-import { AnimalItemLoadingComponent } from './animal-item-loading/animal-item-loading.component';
+import { AnimalCardPlaceholderComponent } from './animal-card-placeholder/animal-card-placeholder.component';
 import { AnimalsDataService } from '@app/animals/shared/services/animals-data.service';
 import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
   declarations: [
     AnimalCardComponent,
+    AnimalCardPlaceholderComponent,
     AnimalDetailsComponent,
-    AnimalListComponent,
-    AnimalItemLoadingComponent
+    AnimalListComponent
   ],
   imports: [
     CommonModule,
