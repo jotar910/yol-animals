@@ -15,7 +15,7 @@
 
   <ng-template #animalsContainer>
     <div class="animal-list__table" [ngClass]="{'animal-list__table--disabled': data.loading}">
-      <app-animal-item *ngFor="let animal of data.animals?.items" [animal]="animal"></app-animal-item>
+      <app-animal-card *ngFor="let animal of data.animals?.items" [animal]="animal"></app-animal-card>
     </div>
     <ng-container [ngTemplateOutlet]="actionContainer"></ng-container>
   </ng-template>

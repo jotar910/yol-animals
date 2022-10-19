@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IAnimal } from '@app/animals/shared/models/animal.interface';
 
 @Component({
-  selector: 'app-animal-item',
-  templateUrl: './animal-item.component.html',
-  styleUrls: ['./animal-item.component.scss'],
+  selector: 'app-animal-card',
+  templateUrl: './animal-card.component.html',
+  styleUrls: ['./animal-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AnimalItemComponent {
+export class AnimalCardComponent {
 
   @Input() animal!: IAnimal;
 

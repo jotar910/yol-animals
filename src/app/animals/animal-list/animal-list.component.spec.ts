@@ -6,7 +6,7 @@ import { map, of, throwError, timer } from 'rxjs';
 import { animalListItemsMock, animalListMock } from '@app/animals/shared/tests/mocks/animals.mock';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '@app/shared/shared.module';
-import { AnimalItemComponent } from '@app/animals/animal-item/animal-item.component';
+import { AnimalCardComponent } from '@app/animals/animal-card/animal-card.component';
 import { AnimalItemLoadingComponent } from '@app/animals/animal-item-loading/animal-item-loading.component';
 
 describe('AnimalListComponent', () => {
@@ -17,8 +17,8 @@ describe('AnimalListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
+        AnimalCardComponent,
         AnimalListComponent,
-        AnimalItemComponent,
         AnimalItemLoadingComponent
       ],
       imports: [
@@ -75,7 +75,7 @@ describe('AnimalListComponent', () => {
     expect(tableEl.children.length).toBe(animalListItemsMock().length);
 
     for (const childEl of Array.from(tableEl.children)) {
-      expect(childEl.tagName.toLowerCase()).toBe('app-animal-item');
+      expect(childEl.tagName.toLowerCase()).toBe('app-animal-card');
     }
 
     expect(tableEl.classList.contains('animal-list__table--disabled')).toBeFalse();
@@ -116,7 +116,7 @@ describe('AnimalListComponent', () => {
     expect(tableEl.children.length).toBe(animalListItemsMock().length);
 
     for (const childEl of Array.from(tableEl.children)) {
-      expect(childEl.tagName.toLowerCase()).toBe('app-animal-item');
+      expect(childEl.tagName.toLowerCase()).toBe('app-animal-card');
     }
 
     expect(tableEl.classList.contains('animal-list__table--disabled')).toBeTrue();

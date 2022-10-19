@@ -1,23 +1,23 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { AnimalItemComponent } from './animal-item.component';
+import { AnimalCardComponent } from './animal-card.component';
 import { animalListItemMock } from '@app/animals/shared/tests/mocks/animals.mock';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('AnimalItemComponent', () => {
-  let component: AnimalItemComponent;
-  let fixture: ComponentFixture<AnimalItemComponent>;
+describe('AnimalCardComponent', () => {
+  let component: AnimalCardComponent;
+  let fixture: ComponentFixture<AnimalCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AnimalItemComponent],
+      declarations: [AnimalCardComponent],
       imports: [
         RouterTestingModule
       ]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(AnimalItemComponent);
+    fixture = TestBed.createComponent(AnimalCardComponent);
     component = fixture.componentInstance;
     component.animal = animalListItemMock();
   });
