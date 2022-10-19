@@ -28,6 +28,7 @@
 }
 
 .card__image {
+  background-color: var(--color-lighter-gray);
   height: 120px;
   object-fit: cover;
   width: 100%;
@@ -53,46 +54,46 @@
   @media screen and (min-width: $breakpoint-lg) {
     padding: $spacer-24;
   }
+}
 
-  .card__title {
-    color: var(--color-dark-text);
-    display: block;
-    font-size: 16px;
-    font-weight: $font-weight-regular;
-    line-height: 22px;
-    margin-bottom: $spacer-10;
+.card__title {
+  color: var(--color-dark-text);
+  display: block;
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+  line-height: 22px;
+  margin-bottom: $spacer-10;
 
-    @media screen and (min-width: $breakpoint-md) {
-      font-size: 20px;
-      line-height: 28px;
-      margin-bottom: $spacer-16;
-    }
-
-    @media screen and (min-width: $breakpoint-lg) {
-      font-size: 24px;
-      line-height: 34px;
-      margin-bottom: $spacer-24;
-    }
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: $spacer-16;
   }
 
-  .card__description {
-    color: var(--color-light-text);
-    display: block;
-    font-size: 12px;
-    font-weight: $font-weight-regular;
-    line-height: 18px;
-    margin-bottom: $spacer-16;
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: $spacer-24;
+  }
+}
 
-    @media screen and (min-width: $breakpoint-md) {
-      font-size: 14px;
-      line-height: 20px;
-    }
+.card__description {
+  color: var(--color-light-text);
+  display: block;
+  font-size: 12px;
+  font-weight: $font-weight-regular;
+  line-height: 18px;
+  margin-bottom: $spacer-16;
 
-    @media screen and (min-width: $breakpoint-lg) {
-      font-size: 16px;
-      line-height: 22px;
-      margin-bottom: $spacer-24;
-    }
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: $spacer-24;
   }
 }
 
